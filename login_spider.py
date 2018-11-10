@@ -1,4 +1,7 @@
 import requests
+#配置应户名和密码
+USERNAME='15827488317'
+PASSWORD='dp19950820'
 class login_spider(object):
     def __init__(self):
         headers = {
@@ -55,8 +58,8 @@ class login_spider(object):
     def main_Login(self):
         login_url = 'https://kyfw.12306.cn/passport/web/login'
         data_post = {
-            "username":"输入您的用户名",
-            "password": "输入您的密码",
+            "username":USERNAME,
+            "password": PASSWORD,
             "appid": "otn"
         }
         res = self.sess.post(login_url, headers=self.headers, data=data_post)

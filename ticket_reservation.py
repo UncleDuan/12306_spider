@@ -1,3 +1,8 @@
+'''
+注意验证码从0-7，中间无空格。
+如:图片第一张和最后一张，输入:07
+先要在login_spider模块配置用户名和密码
+'''
 import re
 from prettytable import PrettyTable
 from login_spider import login_spider
@@ -20,7 +25,7 @@ class ticker_Spider(object):
         raw_to_station = input("请输入目的地>> ")
         train_date = input("请输入出发日>> ")
         # back_train_date = input("请输入返程日>> ")
-        base_url = 'https://kyfw.12306.cn/otn/leftTicket/queryA?'
+        base_url = 'https://kyfw.12306.cn/otn/leftTicket/query?'
         from_station_En = self.get_StationName_En(raw_from_station)
         to_station_En = self.get_StationName_En(raw_to_station)
 
@@ -49,7 +54,7 @@ class ticker_Spider(object):
             # print(i)
             # a = i.find('预订')
 
-            need_data = re.split(r'\|预订\|', each)[1]
+            need_data = re.split(r'\|预订\||\|列车停运\|', each)[1]
             need_data = need_data.split('|')
             print(need_data)
             '''
