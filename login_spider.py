@@ -1,7 +1,7 @@
 import requests
 #配置应户名和密码
-USERNAME='15827488317'
-PASSWORD='dp19950820'
+USERNAME='输入用户名'
+PASSWORD='输入密码'
 class login_spider(object):
     def __init__(self):
         headers = {
